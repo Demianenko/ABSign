@@ -88,6 +88,10 @@ public class Checkout extends Page {
     @CacheLookup
     private WebElement checkBoxShipping;
 
+    @FindBy(xpath =  "//*[@class=\"rowCheck topCheck\"]//*[@class=\"chkBox\"]")
+    @CacheLookup
+    private WebElement checkBoxBuy;
+
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_firstName\"]")
     @CacheLookup
     private WebElement shippingName;
@@ -162,8 +166,7 @@ public class Checkout extends Page {
     }
 
     public Checkout setCreditInformation(String creditCardType, String month, String year, String creditCardNumber, String cvvNumber){
-        waitElementForClick(type);
-        selectDropdownByValue(type,creditCardType);
+        waitElementForClick(number);
         selectDropdownByValue(expirationMonth,month);
         selectDropdownByValue(expirationYear,year);
         number.sendKeys(creditCardNumber);
@@ -173,13 +176,16 @@ public class Checkout extends Page {
 
     public Checkout fillCaptcha(String captchaValue){
         waitElementForClick(captchaCode).sendKeys(captchaValue);
-        checkBox1.click();
-        checkBox2.click();
         return this;
     }
 
     public Checkout clickShippingCheckBox(){
         waitElementForClick(checkBoxShipping).click();
+        return this;
+    }
+
+    public Checkout clickCheckBoxBuy(){
+        waitElementForClick(checkBoxBuy).click();
         return this;
     }
 

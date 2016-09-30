@@ -24,7 +24,7 @@ public class USSignUp extends TestNGTestBase {
     }
     @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
     @DataSource(xlsx = "src/test/resources/contactInformationForUSLogin.xlsx")
-    public void signUpPaid(String tier,String billingCountryID, String name, String surname,
+    public void signUpPaid(String n, String tier,String billingCountryID, String name, String surname,
                            String emailLogin,String company, String numberOfEmployees, String address1,String address2,
                            String cityName, String postCode, String countyID,String cardType, String cardMonth,
                            String cardYear, String cvv, String captcha) {
@@ -32,13 +32,12 @@ public class USSignUp extends TestNGTestBase {
         String phoneNumber = DataGenerator.getUSPhoneNumber();
         String email = DataGenerator.getEMailAddress(emailLogin, phoneNumber);
         register = selectTier(tier);
-        register.clickContinueButton()
-                .clickButtonCheckOut()
+        register.fillContactForm(name,surname,email,phoneNumber,company,numberOfEmployees).clickContinueButton().clickButtonCheckOut()
                 .fillBillingAddress(address1,address2,cityName,postCode).selectBillingCountry(billingCountryID)
                 .selectCounty(countyID)
                 .fillCaptcha(captcha)
                 .setCreditInformation(cardType,cardMonth,cardYear,creditCard,cvv)
-                .clickShippingCheckBox()
+                .clickCheckBoxBuy()
                 .clickReviewButton()
                 .clickButtonBuyNow()
                 .getMainNumber();
