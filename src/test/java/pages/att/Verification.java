@@ -17,11 +17,11 @@ public class Verification extends Page {
 
     @FindBy(xpath = "//*[@id=\"PhoneVerificationForm_verificationCode\"]")
     @CacheLookup
-    public WebElement verificationCodeField;
+    private WebElement verificationCodeField;
 
     @FindBy(xpath = "//*[@name=\"yt2\"]")
     @CacheLookup
-    public WebElement continueButon;
+    private WebElement continueButon;
 
     public Verification fillVerificationCodeField(String verificationCode){
         waitElementForClick(verificationCodeField).sendKeys(verificationCode);

@@ -17,7 +17,7 @@ public class Summary extends Page {
 
     @FindBy(xpath = "//*[@name=\"yt13\"]")
     @CacheLookup
-    public WebElement buyNowButton;
+    private WebElement buyNowButton;
 
     public ThankYou clickBuyNowButton (){
         waitElementForClick(buyNowButton).click();

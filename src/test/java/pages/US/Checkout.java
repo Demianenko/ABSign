@@ -6,7 +6,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
-import pages.UK.Review;
 
 /**
  * Created by user on 22.09.2016.
@@ -18,112 +17,112 @@ public class Checkout extends Page {
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_addressLine1\"]")
     @CacheLookup
-    public WebElement addressLine1;
+    private WebElement addressLine1;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_addressLine2\"]")
     @CacheLookup
-    public WebElement addressLine2;
+    private WebElement addressLine2;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_city\"]")
     @CacheLookup
-    public WebElement city;
+    private WebElement city;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_zipCode\"]")
     @CacheLookup
-    public WebElement zipCode;
+    private WebElement zipCode;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_type\"]")
     @CacheLookup
-    public WebElement type;
+    private WebElement type;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_expirationMonth\"]")
     @CacheLookup
-    public WebElement expirationMonth;
+    private WebElement expirationMonth;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_expirationYear\"]")
     @CacheLookup
-    public WebElement expirationYear;
+    private WebElement expirationYear;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_number\"]")
     @CacheLookup
-    public WebElement number;
+    private WebElement number;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_cvv\"]")
     @CacheLookup
-    public WebElement cvv;
+    private WebElement cvv;
 
     @FindBy(xpath =  "//*[@id=\"yw2\"]/div[6]/div[1]")
     @CacheLookup
-    public WebElement switchToAnnual;
+    private WebElement switchToAnnual;
 
     @FindBy(xpath = "//*[@id=\"yw2\"]/div[6]/div[2]")
     @CacheLookup
-    public WebElement switchToMonth;
+    private WebElement switchToMonth;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_captchaCode\"]")
     @CacheLookup
-    public WebElement captchaCode;
+    private WebElement captchaCode;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_countryId\"]")
     @CacheLookup
-    public WebElement countryDropdown;
+    private WebElement countryDropdown;
 
     @FindBy(xpath = "//*[@id=\"BillingInfoForm_stateId\"]")
     @CacheLookup
-    public WebElement stateDropdown;
+    private WebElement stateDropdown;
 
 
     @FindBy(xpath =  "//*[@id=\"BillingInfoForm_vatNumber\"]")
     @CacheLookup
-    public WebElement vatNumberField;
+    private WebElement vatNumberField;
 
     @FindBy(xpath =  "//*[@id=\"yw4\"]/div[4]/div[2]/div[2]")
     @CacheLookup
-    public WebElement checkBox1;
+    private WebElement checkBox1;
 
     @FindBy(xpath =  "//*[@id=\"yw4\"]/div[3]/div[3]/div[2]")
     @CacheLookup
-    public WebElement checkBox2;
+    private WebElement checkBox2;
 
     @FindBy(xpath =  "//*[@id=\"yw4\"]/div[1]/div[2]/div")
     @CacheLookup
-    public WebElement checkBoxShipping;
+    private WebElement checkBoxShipping;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_firstName\"]")
     @CacheLookup
-    public WebElement shippingName;
+    private WebElement shippingName;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_lastName\"]")
     @CacheLookup
-    public WebElement shippingSurname;
+    private WebElement shippingSurname;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_company\"]")
     @CacheLookup
-    public WebElement shippingCompany;
+    private WebElement shippingCompany;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_addressLine1\"]")
     @CacheLookup
-    public WebElement shippingAddress1;
+    private WebElement shippingAddress1;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_addressLine2\"]")
     @CacheLookup
-    public WebElement shippingAddress2;
+    private WebElement shippingAddress2;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_city\"]")
     @CacheLookup
-    public WebElement shippingCity;
+    private WebElement shippingCity;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_zipCode\"]")
     @CacheLookup
-    public WebElement shippingZipCode;
+    private WebElement shippingZipCode;
 
     @FindBy(xpath =  "//*[@id=\"ShippingInfoForm_stateId\"]")
     @CacheLookup
-    public WebElement shippingStateId;
+    private WebElement shippingStateId;
 
     @FindBy(xpath =  "//*[@name=\"yt0\"]")
     @CacheLookup
-    public WebElement reviewButton;
+    private WebElement reviewButton;
 
     public Checkout selectBillingCountry(String billingCountryID){
         waitElementForClick(countryDropdown);
@@ -172,7 +171,7 @@ public class Checkout extends Page {
         return this;
     }
 
-    public Checkout captcha(String captchaValue){
+    public Checkout fillCaptcha(String captchaValue){
         waitElementForClick(captchaCode).sendKeys(captchaValue);
         checkBox1.click();
         checkBox2.click();
@@ -180,7 +179,7 @@ public class Checkout extends Page {
     }
 
     public Checkout clickShippingCheckBox(){
-        waitElementForClick(checkBoxShipping).click(); //*[@id="yw4"]/div[1]/div[2]/div
+        waitElementForClick(checkBoxShipping).click();
         return this;
     }
 

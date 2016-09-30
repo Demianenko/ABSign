@@ -18,21 +18,20 @@ public class ATTSignUp extends TestNGTestBase {
     ContactInformation contactInformation;
     @BeforeMethod
     public void initPage() {
-        baseUrl = "http://service-amsup-uk.lab.nordigy.ru/office/plansandpricing.html";
+        baseUrl = "http://service-amsup-att.lab.nordigy.ru/web/signup/plansandpricing.html";
         pricing = PageFactory.initElements(driver, Pricing.class);
         driver.get(baseUrl);
     }
-    @Test(dataProvider = "contactInformationForUKLogin", dataProviderClass = DataProviders.class, enabled = true)
-    @DataSource(xlsx = "src/test/resources/contactInformationForUKLogin.xlsx")
-    public void signUpPaid(String type, String tier,String billingCountryID, String vatNumber, String name, String surname,
-                           String emailLogin,String company, String numberOfEmployees, String address1,
-                           String address2,String cityName, String postCode, String location, String countyID,
-                           String cardType, String cardMonth, String cardYear, String cvv, String captcha) {
+    @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
+    @DataSource(xlsx = "src/test/resources/contactInformationForATTLogin.xlsx")
+    public void signUpPaid(String type, String tier,String name, String surname, String emailLogin,String company,
+                           String numberOfEmployees, String address1, String address2,String cityName, String postCode) {
 
-        String phoneNumber = DataGenerator.getUKPhoneNumber();
+        String phoneNumber = DataGenerator.getUSPhoneNumber();
         String email = DataGenerator.getEMailAddress(emailLogin, phoneNumber);
         contactInformation = selectTier(tier,type);
         contactInformation.fillContactForm(phoneNumber,name,surname,email,company)
+                .clickCheckBox()
                 .clickContinueButton()
                 .fillVerificationCodeField("11111")
                 .clickReviewButton()
@@ -44,7 +43,7 @@ public class ATTSignUp extends TestNGTestBase {
     }
     public ContactInformation selectTier(String tier, String type) {
         if(tier.equals("Standard")) {
-            if (tier.equals("true")) {
+            if (type.equals("Trial")) {
                 return pricing.clickStandardTrialButton();
             } else {
                 return pricing.clickStandardBuyButton();

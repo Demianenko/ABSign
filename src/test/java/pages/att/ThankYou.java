@@ -16,7 +16,7 @@ public class ThankYou extends Page {
     }
     @FindBy(xpath = "//*[@class=\"thankYou\"]/div/h2")
     @CacheLookup
-    public WebElement mainPhoneNumber;
+    private WebElement mainPhoneNumber;
 
     public void getMainNumber(){
         waitElementForClick(mainPhoneNumber);

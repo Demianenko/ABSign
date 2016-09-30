@@ -16,19 +16,19 @@ public class Pricing extends Page {
     }
     @FindBy(xpath = "//*[@id=\"main-content\"]/table/tbody/tr[3]/td[2]/a[2]")
     @CacheLookup
-    public WebElement standardBuyButton;
+    private WebElement standardBuyButton;
 
     @FindBy(xpath = "//*[@id=\"main-content\"]/table/tbody/tr[3]/td[2]/a[3]")
     @CacheLookup
-    public WebElement standardTrialButton;
+    private WebElement standardTrialButton;
 
     @FindBy(xpath = "//*[@id=\"main-content\"]/table/tbody/tr[3]/td[3]/a[2]")
     @CacheLookup
-    public WebElement premiumBuyButton;
+    private WebElement premiumBuyButton;
 
     @FindBy(xpath = "//*[@id=\"main-content\"]/table/tbody/tr[3]/td[4]/a[2]")
     @CacheLookup
-    public WebElement enterpriseBuyButton;
+    private WebElement enterpriseBuyButton;
 
 
     public ContactInformation clickStandardBuyButton(){

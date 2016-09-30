@@ -6,7 +6,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
-import pages.UK.Checkout;
 
 /**
  * Created by user on 22.09.2016.
@@ -17,7 +16,7 @@ public class SystemSetup extends Page {
     }
     @FindBy(xpath = "//*[@name=\"yt5\"]")
     @CacheLookup
-    public WebElement buttonCheckOut;
+    private WebElement buttonCheckOut;
 
     public Checkout clickButtonCheckOut(){
         waitElementForClick(buttonCheckOut).click();

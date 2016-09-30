@@ -6,7 +6,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
-import pages.UK.ThankYou;
 
 /**
  * Created by user on 22.09.2016.
@@ -17,7 +16,7 @@ public class Review extends Page {
     }
     @FindBy(xpath = "//*[@name=\"yt4\"]")
     @CacheLookup
-    public WebElement buttonBuyNow;
+    private WebElement buttonBuyNow;
 
     public ThankYou clickButtonBuyNow(){
         waitElementForClick(buttonBuyNow).click();

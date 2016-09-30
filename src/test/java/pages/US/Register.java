@@ -2,10 +2,10 @@ package pages.US;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
-import pages.UK.SystemSetup;
 
 /**
  * Created by user on 22.09.2016.
@@ -16,36 +16,36 @@ public class Register extends Page {
     }
 
     @FindBy(xpath = "//*[@id=\"ContactForm_firstName\"]")
-   // @CacheLookup
-    public WebElement firstName;
+     @CacheLookup
+    private WebElement firstName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_lastName\"]")
-   // @CacheLookup
-    public WebElement lastName;
+     @CacheLookup
+    private WebElement lastName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_email\"]")
-   // @CacheLookup
-    public WebElement contactEmail;
+     @CacheLookup
+    private WebElement contactEmail;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_contactPhone\"]")
-  //  @CacheLookup
-    public WebElement contactPhone;
+     @CacheLookup
+    private WebElement contactPhone;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_company\"]")
-  //  @CacheLookup
-    public WebElement contactCompany;
+     @CacheLookup
+    private WebElement contactCompany;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_numberOfEmployees\"]")
-  //  @CacheLookup
-    public WebElement contactNumberOfEmployees;
+     @CacheLookup
+    private WebElement contactNumberOfEmployees;
 
-        @FindBy(xpath = "//*[@id=\"ContactForm_mainOfficeLocation\"]")
-  //  @CacheLookup
-    public WebElement mainOfficeLocation;
+   @FindBy(xpath = "//*[@id=\"ContactForm_mainOfficeLocation\"]")
+   @CacheLookup
+   private WebElement mainOfficeLocation;
 
     @FindBy(xpath = "//*[@name=\"yt1\"]")
- //   @CacheLookup
-    public WebElement contactFormContinueButton;
+    @CacheLookup
+    private WebElement contactFormContinueButton;
 
     public Register selectLocation(String name) {
         waitElementForClick(mainOfficeLocation);

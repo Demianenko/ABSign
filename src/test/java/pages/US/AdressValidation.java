@@ -17,15 +17,15 @@ public class AdressValidation extends Page {
 
     @FindBy(xpath = "//*[@class=\"info-popup-content\"]")
     @CacheLookup
-    public WebElement validationPage;
+    private WebElement validationPage;
 
     @FindBy(xpath = "//*[@class=\"icon\"]")
     @CacheLookup
-    public WebElement validationIcon;
+    private WebElement validationIcon;
 
     @FindBy(xpath = "//*[@name=\"yt1\"]")
     @CacheLookup
-    public WebElement validationButton;
+    private WebElement validationButton;
 
     public Review checkPopUp(){
         waitElementForClick(validationIcon).click();

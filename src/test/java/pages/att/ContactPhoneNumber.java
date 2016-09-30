@@ -16,7 +16,7 @@ public class ContactPhoneNumber extends Page {
     }
     @FindBy(xpath = "//*[@name=\"yt38\"]")
     @CacheLookup
-    public WebElement continueButon;
+    private WebElement continueButon;
 
     public ShippingAndHanding clickReviewButton(){
         continueButon.click();

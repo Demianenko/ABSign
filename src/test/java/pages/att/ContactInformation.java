@@ -16,32 +16,32 @@ public class ContactInformation extends Page {
     }
     @FindBy(xpath = "//*[@id=\"ContactForm_contactPhone\"]")
     @CacheLookup
-    public WebElement contactPhone;
+    private WebElement contactPhone;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_firstName\"]")
     @CacheLookup
-    public WebElement firstName;
+    private WebElement firstName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_lastName\"]")
     @CacheLookup
-    public WebElement lastName;
+    private WebElement lastName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_email\"]")
     @CacheLookup
-    public WebElement contactEmail;
+    private WebElement contactEmail;
 
 
     @FindBy(xpath = "//*[@id=\"ContactForm_company\"]")
     @CacheLookup
-    public WebElement contactCompany;
+    private WebElement contactCompany;
 
     @FindBy(xpath =  "//*[@id=\"ContactForm_isAgreement\"]")
     @CacheLookup
-    public WebElement checkBox;
+    private WebElement checkBox;
 
-    @FindBy(xpath = "//*[@name=\"yt1\"]")
+    @FindBy(xpath = "//*[@name=\"yt0\"]")
     @CacheLookup
-    public WebElement continueButton;
+    private WebElement continueButton;
 
 
     public ContactInformation fillContactForm(String phoneNumber, String name, String surname, String email, String company) {
@@ -53,6 +53,10 @@ public class ContactInformation extends Page {
         return this;
     }
 
+    public ContactInformation clickCheckBox(){
+        checkBox.click();
+        return this;
+    }
     public Verification clickContinueButton(){
         waitElementForClick(continueButton).click();
         return PageFactory.initElements(driver,Verification.class);

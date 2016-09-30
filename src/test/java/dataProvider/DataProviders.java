@@ -18,7 +18,7 @@ import java.util.Iterator;
  * Created by user on 22.09.2016.
  */
 public class DataProviders {
-    @DataProvider(name = "contactInformationForUKLogin", parallel=false)
+    @DataProvider(name = "contactInformationForLogin", parallel=false)
     public static Iterator<Object[]> remoteServiceDataProvider(Method m) throws ParseException, IOException {
         DataSource sourceAnnotation = m.getAnnotation(DataSource.class);
         final String xlsx = sourceAnnotation.xlsx();
@@ -27,13 +27,16 @@ public class DataProviders {
 
         Collection<Object[]> dp = new ArrayList<Object[]>() {
             {
-                int leighOfAnswer = 19;
+                Row row = sheet.getRow(1);
+                Cell cell = row.getCell(0);
+                cell.setCellType(1);
+                int leighOfAnswer = Integer.valueOf(cell.getStringCellValue());
                 int totalNoOfRows = sheet.getLastRowNum() + 1;
                 for (int i= 1 ; i < totalNoOfRows; i++) {
-                    Row row = sheet.getRow(i);
+                    row = sheet.getRow(i);
                     String[] objects = new String[leighOfAnswer];
                     for (int j = 0; j < leighOfAnswer; j++){
-                        Cell cell = row.getCell(j);
+                        cell = row.getCell(j);
                         cell.setCellType(1);
                         objects[j] = cell.getStringCellValue();
                     }

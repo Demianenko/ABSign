@@ -26,7 +26,7 @@ public class SignUpUK extends TestNGTestBase {
         driver.get(baseUrl);
     }
 
-    @Test(dataProvider = "contactInformationForUKLogin", dataProviderClass = DataProviders.class, enabled = true)
+    @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
     @DataSource(xlsx = "src/test/resources/contactInformationForUKLogin.xlsx")
     public void signUpPaid(String tier,String billingCountryID, String vatNumber, String name, String surname,
                                    String emailLogin,String company, String numberOfEmployees, String address1,

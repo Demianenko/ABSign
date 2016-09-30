@@ -17,37 +17,37 @@ public class ShippingAndHanding extends Page {
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_firstName\"]")
     @CacheLookup
-    public WebElement firstName;
+    private WebElement firstName;
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_lastName\"]")
     @CacheLookup
-    public WebElement lastName;
+    private WebElement lastName;
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_company\"]")
     @CacheLookup
-    public WebElement companyName;
+    private WebElement companyName;
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_addressLine1\"]")
     @CacheLookup
-    public WebElement addressLine1;
+    private WebElement addressLine1;
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_addressLine2\"]")
     @CacheLookup
-    public WebElement addressLine2;
+    private WebElement addressLine2;
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_city\"]")
     @CacheLookup
-    public WebElement city;
+    private WebElement city;
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_zipCode\"]")
     @CacheLookup
-    public WebElement zipCode;
+    private WebElement zipCode;
 
     @FindBy(xpath = "//*[@id=\"ShippingInfoForm_stateId\"]")
     @CacheLookup
-    public WebElement stateDropdown;
+    private WebElement stateDropdown;
 
     @FindBy(xpath = "//*[@name=\"yt4\"]")
     @CacheLookup
-    public WebElement buyNowButton;
+    private WebElement buyNowButton;
 
     public ShippingAndHanding fillShippingInfo(String name, String surname, String company, String address1,
                                                String address2, String cityName, String zip){
