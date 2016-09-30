@@ -27,12 +27,12 @@ public class ContactInformation extends Page {
     public WebElement lastName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_email\"]")
-    // @CacheLookup
+    @CacheLookup
     public WebElement contactEmail;
 
 
     @FindBy(xpath = "//*[@id=\"ContactForm_company\"]")
-    //  @CacheLookup
+    @CacheLookup
     public WebElement contactCompany;
 
     @FindBy(xpath =  "//*[@id=\"ContactForm_isAgreement\"]")
@@ -53,8 +53,8 @@ public class ContactInformation extends Page {
         return this;
     }
 
-    public Verefication clickContinueButton(){
+    public Verification clickContinueButton(){
         waitElementForClick(continueButton).click();
-        return PageFactory.initElements(driver,Verefication.class);
+        return PageFactory.initElements(driver,Verification.class);
     }
 }

@@ -21,7 +21,6 @@ public class SignUpUK extends TestNGTestBase {
 
     @BeforeMethod
     public void initPage() {
-
         baseUrl = "http://service-amsup-uk.lab.nordigy.ru/office/plansandpricing.html";
         plansAndPricing = PageFactory.initElements(driver, PlansAndPricing.class);
         driver.get(baseUrl);

@@ -16,10 +16,10 @@ public class ContactPhoneNumber extends Page {
     }
     @FindBy(xpath = "//*[@name=\"yt38\"]")
     @CacheLookup
-    public WebElement continueButoon;
+    public WebElement continueButon;
 
     public ShippingAndHanding clickReviewButton(){
-        continueButoon.click();
+        continueButon.click();
         return PageFactory.initElements(driver,ShippingAndHanding.class);
     }
 }

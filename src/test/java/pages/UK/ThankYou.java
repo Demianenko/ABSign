@@ -14,7 +14,7 @@ public class ThankYou extends Page {
     public ThankYou(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath = "//*[@class=\"thankYou\"]/div/h2")
+    @FindBy(xpath = "//*[@class=\"thankYou\"]/h2")
     @CacheLookup
     public WebElement mainPhoneNumber;
 

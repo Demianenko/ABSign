@@ -10,8 +10,8 @@ import pages.Page;
 /**
  * Created by user on 29.09.2016.
  */
-public class Verefication extends Page {
-    public Verefication(WebDriver driver) {
+public class Verification extends Page {
+    public Verification(WebDriver driver) {
         super(driver);
     }
 
@@ -21,16 +21,15 @@ public class Verefication extends Page {
 
     @FindBy(xpath = "//*[@name=\"yt2\"]")
     @CacheLookup
-    public WebElement continueButoon;
+    public WebElement continueButon;
 
-    public Verefication fillVerificationCodeField(String verificationCode){
-        verificationCode = "11111";
+    public Verification fillVerificationCodeField(String verificationCode){
         waitElementForClick(verificationCodeField).sendKeys(verificationCode);
         return this;
     }
 
     public ContactPhoneNumber clickReviewButton(){
-        continueButoon.click();
+        continueButon.click();
         return PageFactory.initElements(driver,ContactPhoneNumber.class);
     }
 }
