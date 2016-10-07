@@ -24,7 +24,7 @@ public class ATTSignUp extends TestNGTestBase {
     }
     @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
     @DataSource(xlsx = "src/test/resources/contactInformationForATTLogin.xlsx")
-    public void signUpPaid(String type, String tier,String name, String surname, String emailLogin,String company,
+    public void signUpPaid(String dnc,String type, String tier,String name, String surname, String emailLogin,String company,
                            String numberOfEmployees, String address1, String address2,String cityName, String postCode) {
 
         String phoneNumber = DataGenerator.getUSPhoneNumber();
