@@ -1,6 +1,7 @@
 package util;
 
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -36,6 +37,10 @@ public class TestNGTestBase {
     public void initWebDriver() {
         driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+
+        //System.setProperty("webdriver.gecko.driver", "D:\\tools\\geckodriver.exe");
+        //driver = new MarionetteDriver();
     }
 
     @AfterSuite(alwaysRun = true)

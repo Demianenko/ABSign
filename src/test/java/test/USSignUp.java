@@ -2,6 +2,7 @@ package test;
 
 import dataProvider.DataProviders;
 import dataProvider.DataSource;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,6 +22,8 @@ public class USSignUp extends TestNGTestBase {
         baseUrl = "http://service-amsup-us.lab.nordigy.ru/office/plansandpricing.html";
         plansAndPricing = PageFactory.initElements(driver, PlansAndPricing.class);
         driver.get(baseUrl);
+        Cookie ck1 = new Cookie("disable_Captcha", "succes");
+        driver.manage().addCookie(ck1);
     }
     @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
     @DataSource(xlsx = "src/test/resources/contactInformationForUSLogin.xlsx")
