@@ -2,7 +2,6 @@ package pages.US;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import pages.Page;
 import util.WriteToFile;
@@ -15,7 +14,6 @@ public class ThankYou extends Page {
         super(driver);
     }
     @FindBy(xpath = "//*[@class=\"thankYou\"]/div/h2")
-    @CacheLookup
     private WebElement mainPhoneNumber;
 
     public void getMainNumber(){

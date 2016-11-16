@@ -2,7 +2,6 @@ package pages.US;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
@@ -16,35 +15,27 @@ public class Register extends Page {
     }
 
     @FindBy(xpath = "//*[@id=\"ContactForm_firstName\"]")
-     @CacheLookup
     private WebElement firstName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_lastName\"]")
-     @CacheLookup
     private WebElement lastName;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_email\"]")
-     @CacheLookup
     private WebElement contactEmail;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_contactPhone\"]")
-     @CacheLookup
     private WebElement contactPhone;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_company\"]")
-     @CacheLookup
     private WebElement contactCompany;
 
     @FindBy(xpath = "//*[@id=\"ContactForm_numberOfEmployees\"]")
-     @CacheLookup
     private WebElement contactNumberOfEmployees;
 
    @FindBy(xpath = "//*[@id=\"ContactForm_mainOfficeLocation\"]")
-   @CacheLookup
    private WebElement mainOfficeLocation;
 
     @FindBy(xpath = "//*[@name=\"yt1\"]")
-    @CacheLookup
     private WebElement contactFormContinueButton;
 
     public Register selectLocation(String name) {

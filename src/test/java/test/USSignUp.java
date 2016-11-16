@@ -22,7 +22,7 @@ public class USSignUp extends TestNGTestBase {
         baseUrl = "http://service-amsup-us.lab.nordigy.ru/office/plansandpricing.html";
         plansAndPricing = PageFactory.initElements(driver, PlansAndPricing.class);
         driver.get(baseUrl);
-        Cookie ck1 = new Cookie("disable_Captcha", "succes");
+        Cookie ck1 = new Cookie("disable_Captcha", "success");
         driver.manage().addCookie(ck1);
     }
     @Test(dataProvider = "contactInformationForLogin", dataProviderClass = DataProviders.class, enabled = true)
@@ -38,9 +38,9 @@ public class USSignUp extends TestNGTestBase {
         register.fillContactForm(name,surname,email,phoneNumber,company,numberOfEmployees).clickContinueButton().clickButtonCheckOut()
                 .fillBillingAddress(address1,address2,cityName,postCode).selectBillingCountry(billingCountryID)
                 .selectCounty(countyID)
-                .fillCaptcha(captcha)
                 .setCreditInformation(cardType,cardMonth,cardYear,creditCard,cvv)
                 .clickCheckBoxBuy()
+                .fillCaptcha(captcha)
                 .clickReviewButton()
                 .clickButtonBuyNow()
                 .getMainNumber();

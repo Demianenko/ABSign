@@ -2,7 +2,6 @@ package pages.US;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.Page;
@@ -16,15 +15,12 @@ public class AdressValidation extends Page {
     }
 
     @FindBy(xpath = "//*[@class=\"info-popup-content\"]")
-    @CacheLookup
     private WebElement validationPage;
 
     @FindBy(xpath = "//*[@class=\"icon\"]")
-    @CacheLookup
     private WebElement validationIcon;
 
     @FindBy(xpath = "//*[@name=\"yt1\"]")
-    @CacheLookup
     private WebElement validationButton;
 
     public Review checkPopUp(){
